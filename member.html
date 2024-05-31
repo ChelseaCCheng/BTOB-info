@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMBER</title>
+    <link rel="icon" href="BTOB LOGO.png" type="icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="btob.css">
+    <link rel="index" href="index.html">
+    <link rel="about" href="about.html">
+    <link rel="discography" href="discography.html">
+</head>
+<body>
+    <header class="flex">
+        <div class="logo grid-12 grid-l-4">
+            <a href="index.html"><img src="BTOB LOGO.png" width="55"></a>
+        </div>
+        <menu class="grid-12 grid-l-8">
+            <ul>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="member.html">MEMBERS</a></li>
+                <li><a href="index.html#news">NEWS</a></li>
+                <li><a href="index.html#join">JOIN US</a></li>
+                <li><a href="discography.html">DISCOGRAPHY</a></li>
+            </ul>
+        </menu>
+        <nav id="nav">
+            <div class="hamT"></div>
+            <div class="hamM"></div>
+            <div class="hamB"></div>
+        </nav>
+        <div id="nav_open">
+            <i id="nav_esc" class="fa-solid fa-xmark fa-2x" @click="closeModal"></i>
+            <div>    
+                <ul>
+                    <a class="nav_a" href="about.html">ABOUT</a>
+                    <a class="nav_a" href="#">MEMBERS</a>
+                    <a class="nav_a" href="index.html#news">NEWS</a>
+                    <a class="nav_a" href="index.html#join">JOIN US</a>
+                    <a class="nav_a" href="discography.html">DISCOGRAPHY</a>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div id="info">
+        <div id="personal" class="grid-12">
+            <div>
+                <a class="con" href="" @click.prevent="show('sek')" data-member="sek"><img src="css/member/sek.jpg" ></a>
+                <div><h4>徐恩光</h4></div>
+            </div>
+            <div>
+                <a class="con" href="" @click.prevent="show('lmh')" data-member="lmh"><img src="css/member/lmh.jpg"></a>
+                <div><h4>李旼赫</h4></div>
+            </div>
+            <div>
+                <a class="con" href=""  @click.prevent="show('lcs')" data-member="lcs"><img src="css/member/lcs.jpg"></a>
+                <div><h4>李昌燮</h4></div>
+            </div>
+            <div>
+                <a class="con" href="" @click.prevent="show('lhs')" data-member="lhs"><img src="css/member/lhs.jpg"></a>
+                <div><h4>任炫植</h4></div>
+            </div>
+            <div>
+                <a class="con" href="" @click.prevent="show('peniel')" data-member="peniel"><img src="css/member/peniel.jpg"></a>
+                <div><h4>Peniel</h4></div>
+            </div>
+            <div>
+                <a class="con" href="" @click.prevent="show('ysj')" data-member="ysj"><img src="css/member/ysj.jpg"></a>
+                <div><h4>陸星材</h4></div>
+            </div>
+        </div>
+        <div id="info_p" class="grid-12">
+            <p id="name">{{ shownName }}</p>
+            <p id="born">{{ shownBorn }}</p>
+        </div>
+        <div id="info_sns" v-if="icon">
+            <a :href="shownIns" target="_blank"><i class="fa-brands fa-instagram fa-2x"></i></a>
+            <a :href="shownTwitter" target="_blank"><i class="fa-brands fa-twitter fa-2x"></i></a>
+            <a :href="shownYoutube" target="_blank"><i class="fa-brands fa-youtube fa-2x"></i></a>
+        </div>
+        <div id="info_pic" class="carousel" class="grid-12" >
+            <ul class="carousel-inner-1" v-if="pic" :key="index">
+                <li class="carousel-item"><img :src="shownPic_01"></li>
+                <li class="carousel-item"><img :src="shownPic_02"></li>
+                <li class="carousel-item"><img :src="shownPic_03"></li>  
+                <li class="carousel-item"><img :src="shownPic_04"></li>
+                <li class="carousel-item"><img :src="shownPic_05"></li>
+                <li class="carousel-item"><img :src="shownPic_06"></li>
+                <li class="carousel-item"><img :src="shownPic_01"></li>
+                <li class="carousel-item"><img :src="shownPic_02"></li>
+                <li class="carousel-item"><img :src="shownPic_03"></li>  
+                <li class="carousel-item"><img :src="shownPic_04"></li>
+                <li class="carousel-item"><img :src="shownPic_05"></li>
+                <li class="carousel-item"><img :src="shownPic_06"></li>
+            </ul>
+        </div>
+    </div>
+    <div id="footer" class="flex">
+        <div class="grid-12 grid-s-12 grid-m-6 grid-l-2">
+            <h2>Information</h2>
+                <ul>
+                    <li>最新消息</li>
+                    <li>相關規定</li>
+                    <li>常見問題</li>
+                </ul>
+        </div>
+        <div class="grid-12 grid-s-12 grid-m-6 grid-l-2">
+            <h2>About</h2>
+            <ul>
+                <li>關於我們</li>
+                <li>服務條款</li>
+            </ul>
+        </div>
+        <div class="grid-12 grid-s-12 grid-m-6 grid-l-2">
+            <h2>Contact</h2>
+            <ul>
+                <li>台北市信義區信義路一段11巷11弄11號1樓</li>
+                <li>(02)1234-5678</li>
+                <li>sample@gmail.com</li>
+            </ul>
+        </div>
+        <div class="grid-12 grid-s-12 grid-m-6 grid-l-2">
+            <h2>Follow us</h2>
+            <div class="flex"></div>
+                <i class="fa-brands fa-facebook fa-2x"></i>
+                <i class="fa-brands fa-instagram fa-2x"></i>
+                <i class="fa-brands fa-line fa-2x"></i>
+        </div>
+        <div class="grid-12">
+            Copyright © 2024 Bluer. All rights reserved.<br>
+            版權所有© 2024 鄭皓予
+        </div>
+    </div>
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+<script src="nav.js"></script>
+<script>
+    const app = Vue.createApp({
+        data(){
+            return{
+                members:{
+                sek: {
+                    N:'徐恩光',
+                    name: '徐恩光｜서은광｜Seo Eun-kwang',
+                    src:'css/Member1.jpg',
+                    born: '1990/11/22',
+                    ins:'https://www.instagram.com/btob_silver_light/',
+                    twitter:'https://twitter.com/BTOB_SEKwang',
+                    youtube:'https://www.youtube.com/@BTOB_COMPANY',
+                    pic_01:'css/member/mem_sek_01.jpeg',
+                    pic_02:'css/member/mem_sek_02.jpeg',
+                    pic_03:'css/member/mem_sek_03.jpeg',
+                    pic_04:'css/member/mem_sek_04.jpeg',
+                    pic_05:'css/member/mem_sek_05.jpeg',
+                    pic_06:'css/member/mem_sek_06.jpeg',
+            },
+                lmh: {
+                    N:'李旼赫',
+                    name: '李旼赫｜이민혁｜Lee Min-hyuk',
+                    src:'css/Member2.jpg',
+                    born: '1990/11/29',
+                    ins:'https://www.instagram.com/hutazone/',
+                    twitter:'https://twitter.com/btob2mh',
+                    youtube:'https://www.youtube.com/@BTOB_COMPANY',
+                    pic_01:'css/member/mem_lmh_01.jpeg',
+                    pic_02:'css/member/mem_lmh_02.jpeg',
+                    pic_03:'css/member/mem_lmh_03.jpeg',
+                    pic_04:'css/member/mem_lmh_04.jpeg',
+                    pic_05:'css/member/mem_lmh_05.jpeg',
+                    pic_06:'css/member/mem_lmh_06.jpeg',
+                },
+                lcs: {
+                    N:'李昌燮',
+                    name:'李昌燮｜이창섭｜Lee Chang-sub',
+                    src:'css/Member3.jpg',
+                    born:'1991/02/26',
+                    ins:'https://www.instagram.com/lee_cs_btob/',
+                    twitter:'https://twitter.com/LeeCS_Official',
+                    youtube:'https://www.youtube.com/playlist?list=PLL8Ck3RZ-liVMP6kg9iRIFqEfPWddoWO5',
+                    pic_01:'css/member/mem_lcs_01.jpeg',
+                    pic_02:'css/member/mem_lcs_02.jpeg',
+                    pic_03:'css/member/mem_lcs_03.jpeg',
+                    pic_04:'css/member/mem_lcs_04.jpeg',
+                    pic_05:'css/member/mem_lcs_05.jpeg',
+                    pic_06:'css/member/mem_lcs_06.jpeg',            
+                },
+                lhs: {
+                    N:'任炫植',
+                    name:'任炫植｜임현식｜Lim Hyun-sik',
+                    src:'css/Member4.jpg',
+                    born:'1992/03/07',
+                    ins:'https://www.instagram.com/imhyunsik/',
+                    twitter:'https://twitter.com/BTOB_IMHYUNSIK',
+                    youtube:'https://www.youtube.com/@BTOB_COMPANY',
+                    pic_02:'css/member/mem_lhs_02.jpeg',
+                    pic_01:'css/member/mem_lhs_01.jpeg',
+                    pic_03:'css/member/mem_lhs_03.jpeg',
+                    pic_04:'css/member/mem_lhs_04.jpeg',
+                    pic_05:'css/member/mem_lhs_05.jpeg',
+                    pic_06:'css/member/mem_lhs_06.jpeg',
+                },
+                peniel: {
+                    N:'Peniel',
+                    name:'辛東根｜신동근(프니엘)｜Shin Dong-geun',
+                    src:'css/Member5.jpg',
+                    born:'1993/03/10',
+                    ins:'https://www.instagram.com/btobpeniel/',
+                    twitter:'https://twitter.com/PenielShin',
+                    youtube:'https://www.youtube.com/@BTOB_COMPANY',
+                    pic_01:'css/member/mem_p_01.jpeg',
+                    pic_02:'css/member/mem_p_02.jpeg',
+                    pic_03:'css/member/mem_p_03.jpeg',
+                    pic_04:'css/member/mem_p_04.jpeg',
+                    pic_05:'css/member/mem_p_05.jpeg',
+                    pic_06:'css/member/mem_p_06.jpeg',
+                },
+                ysj: {
+                    N:'陸星材',
+                    name:'陸星材｜육성재｜Yook Sung-jae',
+                    src:'css/Member6.jpg',
+                    born:'1995/05/02',
+                    ins:'https://www.instagram.com/yook_can_do_it/?hl=zh-tw',
+                    twitter:'https://twitter.com/yooksj_official',
+                    youtube:'https://www.youtube.com/@realyookcandoit',
+                    pic_01:'css/member/mem_ysj_01.jpeg',
+                    pic_02:'css/member/mem_ysj_02.jpeg',
+                    pic_03:'css/member/mem_ysj_03.jpeg',
+                    pic_04:'css/member/mem_ysj_04.jpeg',
+                    pic_05:'css/member/mem_ysj_05.jpeg',
+                    pic_06:'css/member/mem_ysj_06.jpeg',
+                }},
+            shownName: '',
+            shownBorn: '',
+            icon:false,
+            shownIns:'',
+            shownTwitter:'',
+            shownYoutube:'',
+            pic:false,
+            shownPic_01:'',
+            shownPic_02:'',
+            shownPic_03:'',
+            shownPic_04:'',
+            shownPic_05:'',
+            shownPic_06:'',
+            timer: null,
+            }   
+        },
+        created() {
+            setInterval(this.showNextSlide, 5000);
+            },
+        methods: {
+            show(data) {
+                this.shownName = data.name;
+                this.shownBorn = data.born;
+                this.icon=true;
+                this.shownIns = data.ins;
+                this.shownTwitter = data.twitter;
+                this.shownYoutube = data.youtube;
+                this.pic=true;
+                this.shownPic_01 = data.pic_01;
+                this.shownPic_02 = data.pic_02;
+                this.shownPic_03 = data.pic_03;
+                this.shownPic_04 = data.pic_04;
+                this.shownPic_05 = data.pic_05;
+                this.shownPic_06 = data.pic_06;
+                clearInterval(this.timer);
+                this.timer = setInterval(this.move, 30);
+            }, 
+            move() {
+                let ul1 = document.querySelector('.carousel-inner-1');
+                let spa = -2;
+                let sc = screen.width
+                
+                if(ul1.offsetLeft <= -1920){
+                    ul1.style.left = 0 + 'px';
+                }else{
+                    ul1.style.left = ul1.offsetLeft + spa + 'px';
+                }
+            }
+        }
+    }).mount("#info");
+
+document.addEventListener('DOMContentLoaded', function () {
+    let links = document.querySelectorAll('.con');
+    links.forEach(function (link) {
+        link.addEventListener('click', function (event) {
+            event.preventDefault(); // 防止點擊連結時的默認行為
+            let memberName = this.getAttribute('data-member'); // 獲取成員名稱
+            app.show(app.members[memberName]); // 使用 Vue 實例的 show 方法來顯示所選成員
+        });
+    });
+});
+
+window.onload = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const memberId = urlParams.get('member_id');
+        if (memberId && app.members[memberId]) {
+            app.show(app.members[memberId]);
+        }
+    };
+</script>
