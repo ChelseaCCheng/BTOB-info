@@ -1082,6 +1082,7 @@
             #a_class{
                 display: flex;
                 flex-wrap: nowrap;
+                width: 100%;
             }
             #type{
                 padding-left: 30px;
@@ -1225,9 +1226,6 @@
             #music{
                 width: 80%;
             }
-            #music_info{
-                width: 16.6%;
-            }
             .modal-overlay{
                 left: 12%;
                 width: 76%;
@@ -1308,6 +1306,9 @@
             }
             #music{
                 width: 85%;
+            }
+            #music_info{
+                width: 16.6%;
             }
             .modal-overlay {
                 left: 17%;
