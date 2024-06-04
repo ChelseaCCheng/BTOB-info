@@ -1220,6 +1220,9 @@
             #group{
                 margin: 0 2em 2em 2em;
             }
+            #a_class{
+                width: 100%;
+            }
             #type{
                 width: 20%;
             }
@@ -1303,6 +1306,9 @@
             /*    discography    */
             #type{
                 width: 15%;
+            }
+            #a_class{
+                width: 100%;
             }
             #music{
                 width: 85%;
