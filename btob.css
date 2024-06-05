@@ -357,6 +357,7 @@
                 background-image: url(css/group/BTOB_8.jpg);
                 background-size: cover;
                 background-position: 50% 35%;
+                overflow-x: hidden;
             }
             #join_half{
                 background-color: #4e4e4e80;
@@ -510,7 +511,6 @@
                 margin-top: 2em;
                 margin-bottom: 4em;
             }
-
             #footer{
                 width: 100%;
                 padding: 2em 1em;
